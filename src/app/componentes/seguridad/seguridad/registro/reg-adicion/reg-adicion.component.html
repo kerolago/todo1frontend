@@ -1,1 +1,162 @@
-<p>reg-adicion works!</p>
+<div class="grid-container">
+    <div class="row py-5"></div>
+
+    <div class="col-12">
+        <form #formAdd="ngForm" (ngSubmit)=" onSubmit()">
+
+
+
+
+            <h6 align="center"><i><u><h3>Regístrate</h3></u></i></h6>
+
+
+            <div class="input-group input-group-sm mb-3">
+
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Nombre</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Nombre completo" aria-label="Username" aria-describedby="basic-addon1" name="nombre" #nombre="ngModel" [(ngModel)]="modelo.nombre" value={{modelo.nombre}} required>
+
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="nombre.touched && !nombre.valid">
+                <div *ngIf="nombre.errors.required"> su nombre completo es Requerido</div>
+
+            </div>
+
+            <div class="input-group input-group-sm mb-3">
+
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Usuario</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Usuario" aria-label="Username" aria-describedby="basic-addon1" name="userName" #userName="ngModel" [(ngModel)]="modelo.userName" value={{modelo.userName}} required minlength="4" maxlength="13" usernameUnico
+                    [ngModelOptions]="{updateOn: 'blur'}">
+
+            </div>
+
+            <div *ngIf="userName.invalid && (userName.dirty || userName.touched)" class="alert alert-danger">
+
+                <div *ngIf="userName.errors.required"> Su usuario completo es Requerido</div>
+                <div *ngIf="userName.errors.minlength">Minimo 4 digitos</div>
+                <div *ngIf="userName.errors.usernameUnico">El nombre de usuario esta en uso</div>
+
+            </div>
+
+
+
+
+
+
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Correo</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Usuario" aria-label="Correo" aria-describedby="basic-addon1" name="email" #email="ngModel" [(ngModel)]="modelo.email" value={{modelo.email}} required emailUnico [ngModelOptions]="{updateOn: 'blur'}">
+            </div>
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                <div *ngIf="email.errors.required"> su email es Requerido</div>
+                <div *ngIf="email.errors.emailUnico">Correo esta en uso</div>
+            </div>
+
+
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Contraseña</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Usuario" aria-label="Contraseña" aria-describedby="basic-addon1" name="pw" #pw="ngModel" [(ngModel)]="modelo.pw" value={{modelo.pw}} required minlength="5" maxlength="20" passwordValidation>
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="pw.touched && !pw.valid">
+                <div *ngIf="pw.errors.required"> su Contraseña es Requerido</div>
+                <div *ngIf="pw.errors.minlength">Minimo 4 digitos</div>
+
+                <div *ngIf="pw.errors.passwordValidation">{{pw.errors.passwordValidation.message}}</div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="card border-primary mb-3" style="max-width: 1000px;color: #7b1fa2">
+
+
+
+                <p align=" center" class="card-text" style="color: #7b1fa2">
+                    <mat-icon>emoji_people</mat-icon>Suplimas te da la bienvenida a nuestra familia.</p>
+                <p align=" center" class="card-text" style="color: #7b1fa2">
+                    <mat-icon>beenhere</mat-icon>Con nosotros obtendrás muchos beneficios.</p>
+                <p align=" center" class="card-text" style="color: #7b1fa2">
+                    <mat-icon>history_edu</mat-icon>Lee los términos y condiciones.</p>
+
+
+                <div class="container">
+                    <div *ngIf="flat2" align="center">
+                        <a href="#ventana1" class="btn btn-success" data-toggle="modal">Guardar</a>
+                    </div>
+                    <div class="modal fade" id="ventana1" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h2 class="modal-title">Terminos y Condiciones</h2>
+                                    <div>
+                                        <button tyle="button" class="close" data-dismiss="modal" aria-hidden="true" *ngIf="flat3">&times;</button>
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <h5>¿Para que tratamos sus datos?</h5>
+                                    <p>Trataremos sus datos con la finalidad de: (i) mantener nuestro registro de clientes, (ii) contactarlo por cualquier medio y poder efectuar la entrega del producto que usted ha solicitado y ha comprado a través del servicio
+                                        de venta a domicilio y/o servicios financieros; (iii) atender cualquier solicitud, tramite o requerimiento relacionado con su compra y/o solicitud; (iv) ofrecerle productos, promociones y/o servicios de Walmart
+                                        de Centroamérica, financieros o no, así como de marcas compartidas por Walmart de Centroamérica con otras empresas, (v) Asignarle, previa solicitud, una cita en nuestras tiendas, así como para enviarle el comprobante
+                                        de asignación de dicha cita, indicando hora, día y su identificación, para que usted pueda ingresar a nuestras tiendas, a través de las filas preferenciales durante la emergencia del Covid 19 y/o en cualquier otra
+                                        situación especial; y (vi) realizar estudios de mercadeo, segmentación de mercado y/o perfiles, o estadísticas a través de encuestas o estudios internas o externos; (vii) para analítica de datos, “cookies” y de
+                                        comportamientos, intereses y gustos de compras, así como para determinar su ubicación y localización dentro de la tienda, y de esa forma brindarle información relevante con sus preferencias de compra. (viii) Si
+                                        decide utilizar la aplicación Compra Click del BAC, para que usted pueda tramitar su pago a través de dicha aplicación, y en ese caso los parámetros y limitaciones de seguridad serán definidos por el responsable
+                                        y propietario de dicha aplicación y no por Walmart de Centroamérica, por lo que usted libera de responsabilidad a Walmart de Centroamérica con respecto a dichos parámetros y limitaciones (ix) Para tramitar el pago
+                                        de su compra, de forma segura y a través del aplicativo “Boton de Pago”, propiedad de Evertec Costa Rica, S.A., empresa subcontratada para el trámite seguro del pago. También lo podremos contactar por teléfono,
+                                        SMS, correo y/o cualquier otro medio, para: atender cualquier solicitud, tramite o requerimiento relacionado con su compra y/o solicitud; controlar la calidad de los servicios; verificar la satisfacción de nuestros
+                                        clientes; y acreditar los contenidos de dichas comunicaciones. A tal efecto pudiéramos grabar y/o almacenar las comunicaciones.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-defaul" data-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-success" data-dismiss="modal" *ngIf="flat3" (click)="termino()" (click)="visibilidad()">Acepto</button>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-7" align="right">
+                    <div *ngIf="flat">
+                        <div align="right">
+
+                            <input type="submit" value="Enviar pedido" class="btn btn-success" value="Guardar">
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+
+        </form>
+        <div class="col-12 ">
+        </div>
+    </div>
+</div>

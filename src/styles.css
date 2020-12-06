@@ -8,21 +8,11 @@ body {
 
 body {
     margin: 0;
-    font-family: Roboto, Arial Narrow, sans-serif "Helvetica Neue", sans-serif;
-    background-image: url();
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .basic-container {
     padding: 30px;
-}
-
-.mat-form-field {
-    font-size: inherit;
-    font-weight: 400;
-    line-height: 1.125;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-color: rgb(123 31 162 / 90%);
-    box-shadow: 0 0 6px 2px black;
 }
 
 .bd-placeholder-img {
@@ -46,9 +36,4 @@ body {
 
 .example-spacer {
     flex: 1 1 auto;
-}
-
-html,
-body {
-    height: 100%;
 }

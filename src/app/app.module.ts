@@ -37,6 +37,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './componentes/footer/footer.component';
 
+import { AuthtGuard } from './shared/segu/autht.guard';
+import { UserGuard } from './shared/user/user.guard';
+
+import { ApiUsuarioService } from './servicios/api-usuario.service';
+import { LoginComponent } from './componentes/seguridad/login/login.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +69,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
     UserEdicionComponent,
     UserEliminarComponent,
     InicioComponent,
-   
+   LoginComponent,
     CategoriaComponent,
     CateAdicionComponent,
     CateEdicionComponent,
@@ -80,7 +87,15 @@ import { FooterComponent } from './componentes/footer/footer.component';
     
 
   ],
-  providers: [],
+  providers: [
+
+    AuthtGuard,
+    UserGuard,
+  
+    ApiUsuarioService,
+
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

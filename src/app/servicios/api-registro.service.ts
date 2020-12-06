@@ -64,7 +64,7 @@ export class ApiRegistroService {
         
       })
     };
-    return this.http.post<any>(this.url + 'user/usuario/'+ter,JSON.stringify(modelo), httpOptions).pipe();
+    return this.http.post<any>(this.url + 'user/cli' ,JSON.stringify(modelo), httpOptions).pipe();
   }
   
   Patch(id, modelo): Observable<any> {
