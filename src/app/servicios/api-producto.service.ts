@@ -34,11 +34,31 @@ export class ApiProductoService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        'token': localStorage.getItem('token')
         
       })
     };
     return this.http.get(this.url + 'producto/' + id, httpOptions).pipe(map(this.extractData));
   }
+
+  Get1(nom: string): Observable<any>{
+    const httpOptions ={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      })
+    };
+    
+    return this.http.get(this.url + 'producto/nombre/' + nom, httpOptions).pipe(map(this.extractData));
+   }
+   Get2(nom: string): Observable<any>{
+    const httpOptions ={
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      })
+    };
+    
+    return this.http.get(this.url + 'producto/categoria/' + nom, httpOptions).pipe(map(this.extractData));
+   }
   Patch(id, modelo): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -48,15 +68,12 @@ export class ApiProductoService {
     };
     return this.http.patch(this.url + 'producto/' + id, JSON.stringify(modelo), httpOptions).pipe();
   }
-  subir( archivo: File, nombre: string,descripcion: string,precio: string,entrada: string, salida:string, estado:string, categoria: string): Observable<any>{
+  subir( archivo: File, nombre: string,descripcion: string,precio: string, categoria: string): Observable<any>{
     let formData = new FormData();
     formData.append("archivo",archivo);
     formData.append("nombre",nombre);
     formData.append("descripcion",descripcion);
     formData.append("precio",precio);
-    formData.append("entrada",entrada);
-    formData.append("salida",salida);
-    formData.append("estado",estado);
     formData.append("categoria",categoria);
 
    
@@ -86,6 +103,15 @@ export class ApiProductoService {
     return this.http.delete(this.url + 'producto/archivo/' + id, httpOptions).pipe();
   }
   
+  GetEli(id): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'token': localStorage.getItem('token')
+      })
+    };
+    return this.http.get(this.url + 'producto/eli/' + id, httpOptions).pipe(map(this.extractData));
+ }
 
 
 

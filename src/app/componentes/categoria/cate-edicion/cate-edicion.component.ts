@@ -39,7 +39,7 @@ export class CateEdicionComponent implements OnInit {
   onSubmit(){
     if(this.modelo.nombre){
       this._api.Patch(this.modelo._id, this.modelo).subscribe(response => {
-        this._router.navigate(['/catalogo']);
+        this._router.navigate(['/categoria']);
         Swal.fire({
           position: 'top-end',
           icon:'success',

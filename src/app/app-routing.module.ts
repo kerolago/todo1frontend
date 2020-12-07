@@ -16,13 +16,24 @@ import { CateAdicionComponent } from './componentes/categoria/cate-adicion/cate-
 import { CateEdicionComponent } from './componentes/categoria/cate-edicion/cate-edicion.component';
 import { CateEliminarComponent } from './componentes/categoria/cate-eliminar/cate-eliminar.component';
 import { CategoriaComponent } from './componentes/categoria/categoria.component';
+import { ProductoAdicionComponent } from './componentes/producto/producto-adicion/producto-adicion.component';
+import { ProductoEdicionComponent } from './componentes/producto/producto-edicion/producto-edicion.component';
+import { ProductoEliminarComponent } from './componentes/producto/producto-eliminar/producto-eliminar.component';
+import { InicioComponent } from './componentes/inicio/inicio.component';
+import { TarjetaComponent } from './componentes/inicio/tarjeta/tarjeta.component';
+import { VentaclienteComponent } from './componentes/venta/ventacliente/ventacliente.component';
+import { VentasComponent } from './componentes/venta/ventas/ventas.component';
+import { ComprasComponent } from './componentes/compras/compras.component';
+import { RegistrarComponent } from './componentes/compras/registrar/registrar.component';
+import { ComEditarComponent } from './componentes/compras/com-editar/com-editar.component';
+import { ComEliminarComponent } from './componentes/compras/com-eliminar/com-eliminar.component';
 
 
 
 const routes: Routes = [
   { path: 'registro', component: RegAdicionComponent},
   { path: 'login', component: LoginComponent },
-  { path: 'inicio', component:ProductoComponent},
+  { path: 'inicio', component:InicioComponent},
 
   ///////////////////////////seguridad
 
@@ -44,7 +55,29 @@ const routes: Routes = [
   { path: 'cat-edicion/:id',component: CateEdicionComponent,canActivate:[AuthtGuard]},
   { path: 'cat-eliminar/:id', component: CateEliminarComponent,canActivate:[AuthtGuard]},
 
-  { path: '**',pathMatch: 'full', redirectTo:'inicio'}
+  ///////////////////////producto
+  { path: 'producto', component:ProductoComponent},
+  { path: 'pro-adicion', component:ProductoAdicionComponent,canActivate:[AuthtGuard]},
+  { path: 'pro-edicion/:id',component: ProductoEdicionComponent,canActivate:[AuthtGuard]},
+  { path: 'pro-eliminar/:id', component: ProductoEliminarComponent,canActivate:[AuthtGuard]},
+
+  ///// tarjeta
+  { path: 'tarjeta/:id', component:TarjetaComponent},
+  ///// vista cliente
+  { path: 'pedidos/:id', component:VentaclienteComponent},
+  ////// ver ventas
+  { path: 'ventas', component:VentasComponent},
+  ///// compras
+  { path: 'compras', component:ComprasComponent},
+  { path: 'com-adicion', component:RegistrarComponent,canActivate:[AuthtGuard]},
+  { path: 'com-edicion/:id',component: ComEditarComponent,canActivate:[AuthtGuard]},
+  { path: 'com-eliminar/:id', component: ComEliminarComponent,canActivate:[AuthtGuard]},
+
+ //////////
+
+  
+  { path: '**',pathMatch: 'full', redirectTo:'inicio'},
+
 
 
 ];

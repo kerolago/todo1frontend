@@ -42,6 +42,14 @@ import { UserGuard } from './shared/user/user.guard';
 
 import { ApiUsuarioService } from './servicios/api-usuario.service';
 import { LoginComponent } from './componentes/seguridad/login/login.component';
+import { TarjetaComponent } from './componentes/inicio/tarjeta/tarjeta.component';
+import { LoadingComponent } from './componentes/inicio/loading/loading.component';
+import { VentaclienteComponent } from './componentes/venta/ventacliente/ventacliente.component';
+import { VentasComponent } from './componentes/venta/ventas/ventas.component';
+import { ComprasComponent } from './componentes/compras/compras.component';
+import { RegistrarComponent } from './componentes/compras/registrar/registrar.component';
+import { ComEditarComponent } from './componentes/compras/com-editar/com-editar.component';
+import { ComEliminarComponent } from './componentes/compras/com-eliminar/com-eliminar.component';
 
 
 @NgModule({
@@ -70,11 +78,19 @@ import { LoginComponent } from './componentes/seguridad/login/login.component';
     UserEliminarComponent,
     InicioComponent,
    LoginComponent,
+   LoadingComponent,
     CategoriaComponent,
     CateAdicionComponent,
     CateEdicionComponent,
     CateEliminarComponent,
-    FooterComponent
+    FooterComponent,
+    TarjetaComponent,
+    VentaclienteComponent,
+    VentasComponent,
+    ComprasComponent,
+    RegistrarComponent,
+    ComEditarComponent,
+    ComEliminarComponent,
   ],
   imports: [
     BrowserModule,

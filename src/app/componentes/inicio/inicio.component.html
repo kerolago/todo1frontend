@@ -1,1 +1,132 @@
-<p>inicio works!</p>
+<div class="grid-container">
+
+    <div class="row py-5"> </div>
+    <div align="center">
+
+
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="col-12">
+
+
+        <div class="row">
+
+            <div class="input-group input-group-lg">
+
+                <span id="inputGroup-sizing-lg" *ngIf="!identity"><a  style="color: #3f51b5;" data-toggle="collapse" href="" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1"> <mat-icon class="example-tab-icon">person_add_alt_1</mat-icon> </a></span>                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="input-group-prepend">
+
+                    <span id="inputGroup-sizing-lg"><a style="color: #3f51b5;"><mat-icon class="example-tab-icon">search</mat-icon></a></span>
+                </div>
+
+                <input #termino type="text" (keyup)="buscar(termino.value) || buscar2(termino.value)  " class="form-control" placeholder="Buscar Productos...." name="search"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <!--               <span id="inputGroup-sizing-lg"><a  style="color: #7b1fa2;" data-toggle="collapse" href="" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> <i><b><h5>Categorías</h5></b></i><mat-icon class="example-tab-icon">storefront</mat-icon></a></span>
+-->
+
+
+
+            </div>
+
+            <!-- 
+<input #termino type="text" (keyup)="buscar(termino.value)" class="form-control" placeholder="Buscar articulos....">
+                -->
+
+
+        </div>
+
+
+
+
+        <app-loading class="m-5" *ngIf="loading"></app-loading>
+
+        <div class="collapse" id="collapseExample1">
+
+            <app-reg-adicion></app-reg-adicion>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="card-deck m-5 animated fadeIn">
+
+
+
+
+                <div *ngFor="let producto of modelos">
+
+
+                    <table *ngIf="!loading">
+
+
+
+
+                        <div class="card w-55" style="width: 15rem;">
+                            <img src="{{ url + 'producto/image/' + producto.nombre1}}" class="card-img-top">
+                            <div class="card-body">
+                                <a [routerLink]="['/tarjeta/',producto._id]" class="btn btn-primary" style="background-color: #3f51b5;">Ver Producto</a>
+
+                                <h5 class="card-title ">{{producto.nombre}}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">{{producto.categoria}}</h6>
+                                <p>{{producto.descripcion}}-</p>
+                                <h6 class="card-subtitle mb-2 text-muted">Stok:{{producto.estado}}</h6>
+
+                                <small>
+                                       <cite title="Source Title"><h6>Precio: L.{{producto.precio}}</h6></cite>
+                                    </small> &nbsp;
+
+                            </div>
+
+
+                        </div>
+
+                        <br>
+
+
+
+
+
+                    </table>
+                </div>
+
+
+
+
+
+
+                <div *ngFor="let producto of modelos1">
+
+                    <table *ngIf="!loading">
+
+
+
+
+                        <div class="card w-55" style="width: 15rem;">
+                            <img src="{{ url + 'producto/image/' + producto.nombre1}}" class="card-img-top">
+                            <div class="card-body">
+                                <a [routerLink]="['/tarjeta/',producto._id]" class="btn btn-primary" style="background-color: #3f51b5;">Ver Producto</a>
+
+                                <h5 class="card-title ">{{producto.nombre}}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">{{producto.categoria}}</h6>
+                                <p>{{producto.descripcion}}-</p>
+                                <h6 class="card-subtitle mb-2 text-muted">Stok:{{producto.estado}}</h6>
+
+                                <small>
+                                           <cite title="Source Title"><h6>Precio: L.{{producto.precio}}</h6></cite>
+                                        </small> &nbsp;
+
+
+                            </div>
+                        </div>
+
+
+                        <br>
+
+
+
+
+                    </table>
+                </div>
+
+
+            </div>

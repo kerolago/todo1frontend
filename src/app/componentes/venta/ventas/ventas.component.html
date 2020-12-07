@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row py-5"></div>
+
+    <div class="col-12">
+        <h2 class="leand" align="center">Tus Pedidos</h2>
+
+        <h2 class="leand" align="left">Nuevos</h2>
+        <br>
+
+        <div class="card-deck m-20 animated fadeIn">
+
+
+            <tr *ngFor="let producto of modelo">
+                <div>
+                    <div class="card w-4" style="width: 9rem; ">
+
+                        <div class="contenedor">
+
+                            <img src="{{ url + 'producto/image/' + producto.nombre1}}" class="card-img-top">
+
+                        </div>
+
+                        <div class="card-body">
+                            <h4 class="text-Title">Pedido </h4>
+                            <h6 class="text-Title">{{producto.producto}} </h6>
+                            <p>Cantidad:.{{producto.cantidad}}</p>
+                            <p>Cliente:.{{producto.id_cliente}}</p>
+                            <p class="text-muted">-- <cite title="text-muted"><h6>Total: L.{{producto.total}}</h6></cite><cite title="text-muted"><h6>precio.:L.{{producto.precio}}</h6></cite><cite title="text-muted"></cite></p>
+                            <a></a>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </tr>
+
+        </div>
+
+
+
+
+    </div>
+</div>

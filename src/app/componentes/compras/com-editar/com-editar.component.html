@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row py-5">
+        <div class="col-12">
+            <div class="row py-5">
+                <div class="col-12">
+                    <form #formAdd="ngForm" (ngSubmit)="onSumit()">
+
+                        <h6>Agregar de Compra</h6>
+
+                        <div class="example-container">
+                            <mat-form-field>
+                                <input type="number" matInput placeholder="Ingrese la  cantidad" name="cantidad" #cantidad="ngModel" [(ngModel)]="modelo.cantidad" value={{modelo.cantidad}} required>
+                                <mat-error *ngIf="!cantidad.valid && cantidad.touched">
+                                    Ingrese cantidad
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label> Producto</mat-label>
+                                <mat-select placeholder="selecione Producto" name="producto" #producto="ngModel" [(ngModel)]="modelo.nombrepro" required>
+
+                                    <mat-option *ngFor="let r of promodelo" [value]='r.nombre' (click)="cargarCombo()">
+
+                                        {{r.nombre}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <hr class="mb-4">
+                            <mat-form-field>
+                                <input matInput placeholder="Total" name="total" #total="ngModel" [(ngModel)]="modelo.total" value={{modelo.total}} required>
+                                <mat-error *ngIf="!total.valid && total.touched">
+                                    Ingrese total
+                                </mat-error>
+                            </mat-form-field>
+
+
+                            <mat-form-field>
+                                <input matInput placeholder="Precio" name="precio" #precio="ngModel" [(ngModel)]="modelo.precio" value={{modelo.precio}} required>
+                                <mat-error *ngIf="!precio.valid && precio.touched">
+                                    Ingrese Precio
+                                </mat-error>
+                            </mat-form-field>
+
+
+                        </div>
+
+                        <hr class="mb-4">
+
+                        <div class="btn-group btn-group-toggle">
+                            <label class="btn btn-secondary active">
+                                 <input type="submit" value="Actualizar" class="btn btn-secondary active">
+                           </label>
+                            <label class="btn btn-secondary">
+                                  <input type="button" class="btn btn-secondary" [routerLink]="['/compras']" value="Cancelar">
+                            </label>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

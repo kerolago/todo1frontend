@@ -6,7 +6,7 @@ import { ApiCategoriaService } from '../../servicios/api-categoria.service';
 @Component({
   selector: 'app-categoria',
   templateUrl: './categoria.component.html',
-  styleUrls: ['./categoria.component.css']
+  styleUrls: ['../../estilos/angular-material.css']
 })
 export class CategoriaComponent implements OnInit {
 

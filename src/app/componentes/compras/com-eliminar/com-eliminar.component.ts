@@ -1,20 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { categoria } from '../../../modelo/categoria';
-import { ApiCategoriaService } from '../../../servicios/api-categoria.service';
+import { detcompra } from '../../../modelo/detcompra';
+import { ApiComprasService } from '../../../servicios/api-compras.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-cate-eliminar',
-  templateUrl: './cate-eliminar.component.html',
-  styleUrls: ['./cate-eliminar.component.css']
+  selector: 'app-com-eliminar',
+  templateUrl: './com-eliminar.component.html',
+  styleUrls: ['./com-eliminar.component.css']
 })
-export class CateEliminarComponent implements OnInit {
-
-  modelo: categoria;
+export class ComEliminarComponent implements OnInit {
+  modelo: detcompra;
 
   constructor(
-    private _api: ApiCategoriaService,
+    private _api: ApiComprasService,
     private _route: ActivatedRoute,
     private _router: Router
   ) { }
@@ -55,7 +54,7 @@ export class CateEliminarComponent implements OnInit {
   }
   onSubmit(){
     this._api.Delete(this.modelo._id).subscribe(response => {
-      this._router.navigate(['/catalogo']);
+      this._router.navigate(['/compras']);
     });
   }
 

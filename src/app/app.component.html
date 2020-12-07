@@ -3,8 +3,9 @@
         <mat-toolbar color="primary">
             <mat-toolbar-row>
 
-                <span>Hulk Store</span>
-
+                <a mat-icon-button style="color: #ffffff" [routerLink]="['inicio']">
+                    <h2>Hulk Store</h2>
+                </a>
 
 
                 <span class="example-spacer"></span>
@@ -34,6 +35,12 @@
                         <span >Cierre sesión</span>
                  </button>
 
+                    <div *ngIf="identity">
+                        <button mat-menu-item [routerLink]="['/pedidos/',identity.userName]" *ngIf="identity.rol == 'user'">
+                    <mat-icon>local_grocery_store</mat-icon>
+                    <span >Compras</span>
+                </button>
+                    </div>
 
 
                     <div *ngIf="identity">
@@ -43,32 +50,42 @@
                     </button>
                     </div>
 
-
                     <div *ngIf="identity">
-                        <button mat-menu-item [routerLink]="['usuarios']" *ngIf="identity.rol == 'admi'">
-                        <mat-icon>home_work</mat-icon>
-                        <span>Clientes </span>
+                        <button mat-menu-item [routerLink]="['ventas']" *ngIf="identity.rol == 'admi'">
+                        <mat-icon>stacked_line_chart</mat-icon>
+                        <span >Ver Ventas</span>
+                    </button>
+                    </div>
+                    <div *ngIf="identity">
+                        <button mat-menu-item [routerLink]="['compras']" *ngIf="identity.rol == 'admi'">
+                        <mat-icon>sticky_note_2</mat-icon>
+                        <span >Registrar Compras</span>
                     </button>
                     </div>
 
+
+
+
+
+
                     <div *ngIf="identity">
                         <button mat-menu-item [routerLink]="['categoria']" *ngIf="identity.rol == 'admi'">
-                        <mat-icon>home_work</mat-icon>
+                        <mat-icon>view_quilt</mat-icon>
                         <span> Agregar Categoria </span>
                     </button>
                     </div>
 
                     <div *ngIf="identity">
-                        <button mat-menu-item [routerLink]="['categoria']" *ngIf="identity.rol == 'admi'">
-                        <mat-icon>home_work</mat-icon>
+                        <button mat-menu-item [routerLink]="['producto']" *ngIf="identity.rol == 'admi'">
+                        <mat-icon>equalizer</mat-icon>
                         <span>Agregar producto </span>
                     </button>
                     </div>
 
                     <div *ngIf=" identity ">
-                        <button mat-menu-item [routerLink]="['productos']">
-                        <mat-icon>book</mat-icon>
-                        <span>Productos</span>
+                        <button mat-menu-item [routerLink]="['inicio']">
+                        <mat-icon>home</mat-icon>
+                        <span>Inicio</span>
 
                     </button>
                     </div>
