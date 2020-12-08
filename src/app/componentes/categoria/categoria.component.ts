@@ -13,7 +13,7 @@ export class CategoriaComponent implements OnInit {
   displayedColums : String[] = ['nombre','editar', 'eliminar'];
   modelo: categoria[];
   dataSource;
-
+  public api10: ApiCategoriaService;
   @ViewChild(MatPaginator, {static: true}) paginacion: MatPaginator;
 
   constructor(

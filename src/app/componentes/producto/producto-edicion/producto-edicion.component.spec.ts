@@ -19,7 +19,5 @@ describe('ProductoEdicionComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+ 
 });

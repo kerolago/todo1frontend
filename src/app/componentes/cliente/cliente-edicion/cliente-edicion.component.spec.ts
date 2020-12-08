@@ -19,7 +19,5 @@ describe('ClienteEdicionComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+
 });

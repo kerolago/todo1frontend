@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 export class CateEliminarComponent implements OnInit {
 
   modelo: categoria;
+  public api10: ApiCategoriaService;
 
   constructor(
     private _api: ApiCategoriaService,

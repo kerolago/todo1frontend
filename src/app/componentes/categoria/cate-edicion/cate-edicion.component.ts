@@ -14,7 +14,7 @@ export class CateEdicionComponent implements OnInit {
 
   modelo: categoria;
  
-
+  public api10: ApiCategoriaService;
   constructor(
     private _api:ApiCategoriaService,
     

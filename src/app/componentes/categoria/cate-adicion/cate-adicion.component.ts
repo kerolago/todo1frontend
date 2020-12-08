@@ -7,13 +7,14 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-cate-adicion',
   templateUrl: './cate-adicion.component.html',
-  styleUrls: ['./cate-adicion.component.css']
+  styleUrls: ['./cate-adicion.component.css'],
+  providers: [ApiCategoriaService]
 })
 export class CateAdicionComponent implements OnInit {
 
   modelo: categoria;
  
-
+  public api10: ApiCategoriaService;
   constructor(
     private _api: ApiCategoriaService ,
     

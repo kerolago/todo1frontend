@@ -19,7 +19,5 @@ describe('ProductoAdicionComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  
 });

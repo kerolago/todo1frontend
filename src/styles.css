@@ -9,6 +9,10 @@ body {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-image: url(55.png);
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position: 800px 500px;
 }
 
 .basic-container {

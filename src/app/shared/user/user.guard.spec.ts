@@ -9,7 +9,5 @@ describe('UserGuard', () => {
     });
   });
 
-  it('should ...', inject([UserGuard], (guard: UserGuard) => {
-    expect(guard).toBeTruthy();
-  }));
+ 
 });
